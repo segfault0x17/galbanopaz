@@ -10,7 +10,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-image: url(images/background2cpy.png);
+    background-image: url(background2cpy.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
