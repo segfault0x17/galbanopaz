@@ -1,0 +1,216 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Essencial para responsividade */
+}
+
+body {
+
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: url(images/background2cpy.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: "Bruno Ace SC", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    overflow-y: scroll;
+}
+
+body::-webkit-scrollbar{
+    display: none;
+}
+
+img {
+    width: 10%;
+    border-radius: 100%;
+    max-width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+h1 {
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-bottom: 15px;
+    color: aliceblue;
+    font-size: 20px;
+}
+
+h2{
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    font-size: 10px;
+    margin-bottom: 45px;
+    color: aliceblue;
+}
+
+.social-container {
+    width: 65%;
+    margin: 0 auto;
+    max-width: 900px;
+    position: relative;
+    min-height: 50px;
+    margin-bottom: 25px;
+    border-radius: 50px;
+    background-color: #03356d;
+    box-shadow: -3px -3px #00f2ff, 3px 3px #ff00ff;
+    cursor: pointer;
+    
+    /* Flexbox no pai para alinhar o link */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Isso centraliza verticalmente sem precisar de 'top' */
+    overflow: hidden; /* Garante que o hover não escape das bordas arredondadas */
+    animation: balanco 1s ease-in-out infinite;
+}
+
+.social-container:hover{
+    background: #ff00ff;
+    opacity: 0.8;
+    animation: social-container 0.6s infinite ;
+}
+
+.social-container a {
+    /* O SEGREDO: O link vira um bloco que ocupa 100% do pai */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    min-height: 50px; /* Mesma altura do container */
+    
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: aliceblue;
+    font-size: 12px;
+}
+
+
+.social-container a::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1; /* Garante que fique por cima de tudo na div */
+}
+
+@keyframes social-container {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 1px); }
+    40% { transform: translate(2px, -1px); }
+    60% { transform: translate(-1px, 0); }
+    80% { transform: translate(1px, 1px); }
+    100% { transform: translate(0); }
+}
+
+
+@keyframes balanco {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(1deg); }
+    75% { transform: rotate(-1deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.dev-info {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    top: 60px;
+    color: #ff00ff;
+    padding-top: 40px;
+    margin-bottom: 20px;
+}
+
+.social-medias-container{
+    position: relative;
+    display: flex;
+    gap: 10px;
+    transition: 0.2s;
+    font-size: 40px;
+    opacity: 0.4;
+    z-index: 9999;
+    margin-left: auto;
+    margin-right: auto;
+    top: 60px;
+}
+
+.social-medias-container a{
+    font-size: 40px;
+    color: #ff00ff;
+    padding-bottom: 30px;
+}
+
+.social-medias-container a:hover {
+    color: #8c918c;
+}
+
+
+/* Media Query para dispositivos móveis (telas até 768px) */
+@media screen and (max-width: 768px) {
+    
+    img {
+        width: 20%; /* Aumenta a imagem de perfil no celular */
+        margin-top: 50px;
+        margin-bottom: 30px;
+    }
+
+    h1 {
+        font-size: 18px; /* Ajusta o título */
+        padding: 0 10px;
+    }
+
+    h2 {
+        font-size: 9px;
+        margin-bottom: 30px;
+    }
+
+    .social-container {
+        width: 85%; /* Ocupa mais espaço lateral no celular */
+        min-height: 45px;
+    }
+
+    .social-container a {
+        font-size: 10px; /* Diminui a fonte do botão para não quebrar linha */
+        letter-spacing: 1px;
+    }
+
+    .social-medias-container {
+        font-size: 30px; /* Ícones menores no rodapé */
+        gap: 20px;
+    }
+
+    .social-medias-container a {
+        font-size: 30px;
+    }
+
+    .dev-info {
+        font-size: 12px;
+        top: 40px;
+    }
+}
+
+/* Ajuste para telas muito pequenas (até 480px) */
+@media screen and (max-width: 480px) {
+    .social-container {
+        width: 90%;
+    }
+    
+    img {
+        width: 50%;
+    }
+}
