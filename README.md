@@ -1,1 +1,1 @@
-Página link in bio feita para um cliente, onde utilizei HTML e CSS com conceitos como animation,  responsividade, além de design com o canva.
+Página link in bio feita para um cliente, onde utilizei HTML e CSS com conceitos como animation,  responsividade, além de design com o canva e deploy na plataforma vercel.
