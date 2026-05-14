@@ -12,7 +12,7 @@ body {
     min-height: 100vh;
     background-image: url(background2cpy.png);
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: repeat-y;
     background-position: center;
     font-family: "Bruno Ace SC", sans-serif;
     font-weight: 400;
